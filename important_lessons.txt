@@ -1,0 +1,4 @@
+- Objects & Arrays are passed by reference in Javascript!
+- The state should not be mutaded directly as that can lead to a lot of problems unexpected problems.
+- Hence, treat the state as if it were immutable.
+- Create copies e.g. with the spread operator of the state when you want to update the state and use ergo that copy to update the state.
