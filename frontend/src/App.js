@@ -50,7 +50,8 @@ class App extends Component {
   render() {
 
     const buttonStyle = {
-      backgroundColor : 'white',
+      backgroundColor : 'green',
+      color: 'white',
       font : 'inherit',
       border: '1px solid blue',
       padding: '8px',
@@ -62,7 +63,6 @@ class App extends Component {
 
 
     if(this.state.showPersons) {
-
       persons = (
         <div>
         {this.state.persons.map((person, index) => {
@@ -75,13 +75,24 @@ class App extends Component {
         })}
       </div>
       );
+      buttonStyle.backgroundColor = 'red';
+    }
+
+    let pClasses = [];
+
+    if(this.state.persons.length <= 2) {
+      pClasses.push('red')
+    }
+
+    if(this.state.persons.length <= 1) {
+      pClasses.push('bold');
     }
 
     return (
 
       <div className="App">
         <h1>Hi, I'm a React App</h1>
-        <p>This is really working!</p>
+        <p className={pClasses.join(' ')}>This is really working!</p>
         <button style={buttonStyle} onClick={this.toggglePersonsHandler}>Toggle Persons</button>
         {persons}
       </div>
