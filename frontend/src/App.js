@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 import Person from './Person/Person.js';
 
 
@@ -84,15 +84,15 @@ class App extends Component {
     let pClasses = [];
 
     if(this.state.persons.length <= 2) {
-      pClasses.push('red')
+      pClasses.push(classes.red)
     }
 
     if(this.state.persons.length <= 1) {
-      pClasses.push('bold');
+      pClasses.push(classes.bold);
     }
 
     return (
-      <div className="App">
+      <div className={classes.App}>
         <h1>Hi, I'm a React App</h1>
         <p className={pClasses.join(' ')}>This is really working!</p>
         <button style={buttonStyle} onClick={this.toggglePersonsHandler}>Toggle Persons</button>
