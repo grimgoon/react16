@@ -8,3 +8,9 @@
 
 - Chrome Developer tool (Or using the Visual Studio Code Chrome debug extension) is a great way to debug logical errors by setting break points on lines.
 - ErrorBoundary is a good way to keep uncertain components that might fail on live (such as using third party APIs) safe from breaking the whole application and instead display an error message to the user, and log issues for you. 
+
+- Use stateless components (function components) as much as possible. 
+- Try to narrow it down so only the central top component is a statefull component (class components).
+- This is to ensure that bigger applications .. 
+
+FILL OUT MORE!FILL OUT MORE!FILL OUT MORE!FILL OUT MORE!FILL OUT MORE!FILL OUT MORE!FILL OUT MORE!FILL OUT MORE!FILL OUT MORE!FILL OUT MORE!FILL OUT MORE!FILL OUT MORE!
