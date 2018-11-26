@@ -10,7 +10,7 @@
 - ErrorBoundary is a good way to keep uncertain components that might fail on live (such as using third party APIs) safe from breaking the whole application and instead display an error message to the user, and log issues for you. 
 
 - Use stateless components (function components) as much as possible. 
-- Try to narrow it down so only the central top component is a statefull component (class components).
-- This is to ensure that bigger applications .. 
+- Try to narrow it down so only the central top component of each feature is a statefull component (class components) and then it trickles down to smaller stateless ones.
+- This is to ensure that the flow is easy to read when it comes to states. Having a lot of states created and passed around will quickly become unmanagable.
+- By instead passing down ergo all states that regard the authentication feature from one bigger central component it will be much more managable to expand and work with.
 
-FILL OUT MORE!FILL OUT MORE!FILL OUT MORE!FILL OUT MORE!FILL OUT MORE!FILL OUT MORE!FILL OUT MORE!FILL OUT MORE!FILL OUT MORE!FILL OUT MORE!FILL OUT MORE!FILL OUT MORE!
