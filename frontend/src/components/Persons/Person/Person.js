@@ -16,6 +16,11 @@ class Person extends Component {
         console.log('[Person.js] Did Mount');
       }
 
+      componentWillUnmount()
+      {
+          console.log('A person got killed');
+      }
+
     render() {
 
         console.log('[Person.js] Render');
