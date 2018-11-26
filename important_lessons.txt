@@ -1,4 +1,10 @@
 - Objects & Arrays are passed by reference in Javascript!
 - The state should not be mutaded directly as that can lead to a lot of problems unexpected problems.
 - Hence, treat the state as if it were immutable.
-- Create copies e.g. with the spread operator of the state when you want to update the state and use ergo that copy to update the state.
+- Create copies e.g. with the spread operator of an object or array inside the state when you want to update the state and use ergo that copy to update the state.
+- And remember to ALWAYS use the setState.
+
+- CSS Modules is possible to use to scope css files to not be global; But instead local to your files. Which can be handy.
+
+- Chrome Developer tool (Or using the Visual Studio Code Chrome debug extension) is a great way to debug logical errors by setting break points on lines.
+- ErrorBoundary is a good way to keep uncertain components that might fail on live (such as using third party APIs) safe from breaking the whole application and instead display an error message to the user, and log issues for you. 
