@@ -18,11 +18,16 @@ class Person extends Component {
       
       componentDidMount() {
         console.log('[Person.js] Did Mount');
+        if(this.props.position === 0){
+            this.inputElement.focus();
+        }
+
       }
 
       componentWillUnmount()
       {
           console.log('A person got killed');
+          
       }
 
     render() {
@@ -33,7 +38,11 @@ class Person extends Component {
             <Aux>
                 <p onClick={this.props.click}>I'm {this.props.name} and I am {this.props.age} years old!</p>
                 <p>this.{this.props.children}</p>
-                <input type="text" onChange={this.props.changed} value={this.props.name} />
+                <input
+                    ref={(inp) => { this.inputElement = inp}} 
+                    type="text"
+                    onChange={this.props.changed} 
+                    value={this.props.name} />
             </Aux> 
         )
 
