@@ -28,3 +28,6 @@ Similiar to the Aux Component in this project.
     <h1>First Element</h1>
     <h1>Second Element</h1>
 </>
+
+
+PropTypes library. Can be could to use in certain cases, such as working in teams, to define what type of data is epected from a prop, e.g. a number / function / string etc.
