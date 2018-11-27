@@ -20,3 +20,11 @@ https://puu.sh/C7Y0E/38436c2d41.png
 
 Component Lifecycle - Update Flow: 
 https://puu.sh/C80Ex/a37d3abd3d.png
+
+
+A fragment, which is used by having empty JSX tag. Which is a  way (in React 16.2+) to return JSX in our render function, without having to wrap the content in e.g. a div.
+Similiar to the Aux Component in this project.
+<>
+    <h1>First Element</h1>
+    <h1>Second Element</h1>
+</>
