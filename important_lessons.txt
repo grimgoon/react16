@@ -1,9 +1,33 @@
 - Objects & Arrays are passed by reference in Javascript!
 - The state should not be mutaded directly as that can lead to a lot of problems unexpected problems.
 - Hence, treat the state as if it were immutable.
-- Create copies e.g. with the spread operator of the state when you want to update the state and use ergo that copy to update the state.
+- Create copies e.g. with the spread operator of an object or array inside the state when you want to update the state and use ergo that copy to update the state.
+- And remember to ALWAYS use the setState.
 
-___
+- CSS Modules is possible to use to scope css files to not be global; But instead local to your files. Which can be handy.
 
-It's possible to scope .css files to not be local to your files and NOT global with the help of css-modules.
-There's also a popular plugin called Radium that's possible to add extra functionality to the inline React styling.
+- Chrome Developer tool (Or using the Visual Studio Code Chrome debug extension) is a great way to debug logical errors by setting break points on lines.
+- ErrorBoundary is a good way to keep uncertain components that might fail on live (such as using third party APIs) safe from breaking the whole application and instead display an error message to the user, and log issues for you. 
+
+- Use stateless components (function components) as much as possible. 
+- Try to narrow it down so only the central top component of each feature is a stateful component (class components) and then it trickles down to smaller stateless ones.
+- This is to ensure that the flow is easy to read when it comes to states. Having a lot of states created and passed around will quickly become unmanagable.
+- By instead passing down ergo all states that regard the authentication feature from one bigger central component it will be much more managable to expand and work with.
+
+
+Component Lifecycle - Creation Flow: 
+https://puu.sh/C7Y0E/38436c2d41.png
+
+Component Lifecycle - Update Flow: 
+https://puu.sh/C80Ex/a37d3abd3d.png
+
+
+A fragment, which is used by having empty JSX tag. Which is a  way (in React 16.2+) to return JSX in our render function, without having to wrap the content in e.g. a div.
+Similiar to the Aux Component in this project.
+<>
+    <h1>First Element</h1>
+    <h1>Second Element</h1>
+</>
+
+
+PropTypes library. Can be could to use in certain cases, such as working in teams, to define what type of data is epected from a prop, e.g. a number / function / string etc.
