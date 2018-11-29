@@ -40,3 +40,9 @@ Can be a good way to share certain props that are global, like authentication lo
 Easily to do bad things and usually not that useful.
 Offers two new Lifecycle Hooks.
 getDerivedStateFromProps & getSnapshotBeforeUpdate
+
+
+Planning a React App
+1. Plan Component Tree / Component Structure
+2. Application State (Data)
+3. Components vs Containers
