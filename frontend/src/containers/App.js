@@ -6,8 +6,6 @@ import Aux from '../hoc/AuxHOC';
 import withClass from '../hoc/withClass';
 
 
-export const AuthContext = React.createContext(false);
-
 class App extends PureComponent {
 
   constructor(props) {
@@ -22,7 +20,6 @@ class App extends PureComponent {
       otherState: 'some other value',
       showPersons: false,
       toggleClicked : 0,
-      authenticated: false
     }
   }
 
@@ -44,14 +41,6 @@ class App extends PureComponent {
     console.log('[UPDATE App.js] Inside componentWillUpdate', nextProps, nextState);
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    console.log('[UPDATE App.js] Inside GetDerviedStateFromProps', nextProps, prevState);
-    return prevState
-  }
-
-  getSnapshotBeforeUpdate() {
-    console.log('[UPDATE App.js] Inside getSnapshotBeforeUpdate');
-  }
   componentDidUpdate() {
     console.log('[UPDATE App.js] Inside componentDidUpdate');
   }
@@ -102,10 +91,6 @@ class App extends PureComponent {
       
     } );
   }
-  
-  loginHandler = () => {
-    this.setState({authenticated : true});
-  }
 
   render () {
     console.log('[App.js] Render()');
@@ -125,12 +110,9 @@ class App extends PureComponent {
               appTitle ={this.props.title}
               showPersons={this.state.showPersons} 
               persons={this.state.persons}
-              login={this.loginHandler}
               clicked={this.togglePersonsHandler} />
-              <AuthContext.Provider value={this.state.authenticated}>
-                {persons}
-              </AuthContext.Provider>
-            
+
+            {persons}
           </Aux>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));

@@ -22,7 +22,7 @@ Component Lifecycle - Update Flow:
 https://puu.sh/C80Ex/a37d3abd3d.png
 
 
-- A fragment, which is used by having empty JSX tag. Which is a  way (in React 16.2+) to return JSX in our render function, without having to wrap the content in e.g. a div.
+A fragment, which is used by having empty JSX tag. Which is a  way (in React 16.2+) to return JSX in our render function, without having to wrap the content in e.g. a div.
 Similiar to the Aux Component in this project.
 <>
     <h1>First Element</h1>
@@ -31,12 +31,3 @@ Similiar to the Aux Component in this project.
 
 
 PropTypes library. Can be could to use in certain cases, such as working in teams, to define what type of data is epected from a prop, e.g. a number / function / string etc.
-
-
-- Context API provides a way to pass data through the component tree without having to pass props down manually at every level.
-Can be a good way to share certain props that are global, like authentication login state, theme, locale preference)
-
-- ComponentWillMount, componentWillUpdate, compnentWillReceiveProps - Discouraged from now on.
-Easily to do bad things and usually not that useful.
-Offers two new Lifecycle Hooks.
-getDerivedStateFromProps & getSnapshotBeforeUpdate
