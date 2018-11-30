@@ -1,36 +1,38 @@
 import React, {Component} from 'react';
-import style from './BurgerIngredient.module.css';
 import PropTypes from 'prop-types';
+import styles from './BurgerIngredient.module.css';
 
-class BurgerIngredient extends CompositionEvent {
+class BurgerIngredient extends Component {
 
     render ()
     {
+        console.log(styles);
+
         let ingredient = null;
 
     switch(this.props.type) {
         case('bread-bottom'):
-            ingredient = <div classsName={style.BreadBottom}></div>;
+            ingredient = <div className={styles.BreadBottom}></div>;
             break;
         case('bread-top'):
             ingredient = (
-                <div classsName={style.BreadTop}>
-                    <div classname={style.Seeds1}></div>
-                    <div classname={style.Seeds1}></div>
+                <div className={styles.BreadTop}>
+                    <div className={styles.Seeds1}></div>
+                    <div className={styles.Seeds1}></div>
                 </div>
             );
             break;
         case('meat'):
-            ingredient = <div classsName={style.Meat}></div>;
+            ingredient = <div className={styles.Meat}></div>;
             break;
         case('cheese'):
-            ingredient = <div classsName={style.Cheese}></div>;
+            ingredient = <div className={styles.Cheese}></div>;
             break;
         case('bacon'):
-            ingredient = <div classsName={style.Bacon}></div>;
+            ingredient = <div className={styles.Bacon}></div>;
             break;
         case('salad'):
-            ingredient = <div classsName={style.Salad}></div>;
+            ingredient = <div className={styles.Salad}></div>;
             break;
         default:
             ingredient = null;
@@ -41,7 +43,7 @@ class BurgerIngredient extends CompositionEvent {
     
 }
 
-BurgerIngredient.PropTypes = {
+BurgerIngredient.propTypes = {
     type : PropTypes.string.isRequired,
 }
 
