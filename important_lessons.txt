@@ -53,3 +53,9 @@ _____
 Improve Performance and Application: 
 - Prop Type Validation. A bit more useful when working on a team.
 - Pure Components & ShouldComponentUpdate
+
+__
+
+Good Thirdparty Packages:
+- Axios - Make http / Ajax requests
+- PropTypes - To validate prop variable types. Good for bigger projects with several teammembers.
