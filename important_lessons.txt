@@ -57,5 +57,8 @@ Improve Performance and Application:
 __
 
 Good Thirdparty Packages:
-- Axios - Make http / Ajax requests
+- Axios - Make http / Ajax requests easier.
 - PropTypes - To validate prop variable types. Good for bigger projects with several teammembers.
+
+Other Good Resoures:
+https://jsonplaceholder.typicode.com/ - Used for dummy JSON http requests.
