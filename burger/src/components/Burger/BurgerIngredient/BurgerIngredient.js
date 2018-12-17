@@ -6,8 +6,6 @@ class BurgerIngredient extends Component {
 
     render ()
     {
-        console.log(styles);
-
         let ingredient = null;
 
     switch(this.props.type) {
