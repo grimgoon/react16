@@ -39,6 +39,30 @@ class BurgerBuilder extends Component {
             this.setState({purchaseable: sum > 0});
     }
 
+    removeAllIngredientsHandler = () => {
+        const updatedIngredients = {
+            ...this.state.ingredients
+        }
+
+        const oldPrice = this.state.totalPrice;
+
+        let reducedPrice = 0;
+
+        Object.keys(updatedIngredients).forEach(type => {
+
+            reducedPrice = reducedPrice + (updatedIngredients[type] * INGREDIENT_PRICES[type]);
+            console.log(reducedPrice);
+            updatedIngredients[type] = 0;
+        });
+
+        let newPrice = oldPrice - reducedPrice;
+
+        this.setState({totalPrice : newPrice, ingredients : updatedIngredients})
+
+        this.updatePurchaseState(updatedIngredients);
+
+    }
+
     addIngredientHandler = (type) => {
         const oldCount = this.state.ingredients[type];
         const updatedCount = oldCount +1;
@@ -108,6 +132,7 @@ class BurgerBuilder extends Component {
                 <BuildControls 
                     ingredientAdded={this.addIngredientHandler}
                     ingredientRemoved={this.removeIngredientHandler}
+                    ingredientRemoveAll={this.removeAllIngredientsHandler}
                     disabled={disabledInfo}
                     price={this.state.totalPrice}
                     purchaseable={this.state.purchaseable}
