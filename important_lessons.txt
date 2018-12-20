@@ -59,6 +59,7 @@ __
 Good Thirdparty Packages:
 - Axios - Make http / Ajax requests easier.
 - PropTypes - To validate prop variable types. Good for bigger projects with several teammembers.
+- react-router & react-router-dom - More or less the de facto packages for handling routing in React. 
 
 Other Good Resoures:
 https://jsonplaceholder.typicode.com/ - Used for dummy JSON http requests.
