@@ -5,7 +5,7 @@ class OrderSummary extends Component {
     // This could be a functional component - Class for test purposes!
 
     componentWillUpdate() {
-        console.log("Order Summary - Will Update!");
+        //console.log("Order Summary - Will Update!");
     }
 
     render() {
