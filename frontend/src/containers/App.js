@@ -3,7 +3,7 @@ import classes from './App.css';
 import Persons from '../components/Persons/Persons.js';
 import Cockpit from '../components/Cockpit/Cockpit';
 import Aux from '../hoc/AuxHOC';
-import withClass from '../hoc/WithClass';
+import withClass from '../hoc/withClass';
 
 
 export const AuthContext = React.createContext(false);
@@ -130,7 +130,7 @@ class App extends PureComponent {
               <AuthContext.Provider value={this.state.authenticated}>
                 {persons}
               </AuthContext.Provider>
-            
+              <div id="XS-pay2play-widget"></div>
           </Aux>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
