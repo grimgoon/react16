@@ -5,10 +5,14 @@ const order = (props) => {
     return (
         <div className={styles.Order}>
             <p>
-                Ingredients: Salad(1)
+                
+                <strong>Ingredients</strong> 
+                {Object.keys(props.orderData.ingredients).map(ingredient => {
+                    return <p>{ingredient}: {props.orderData.ingredients[ingredient]} </p> ;
+                })}
             </p>
             <p> 
-                Price: <strong>USD 5.45</strong>
+                Price: <strong>{Number.parseFloat(props.orderData.price).toFixed(2)}</strong>
             </p>
         </div>
     )
