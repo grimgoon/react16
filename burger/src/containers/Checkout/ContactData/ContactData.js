@@ -15,12 +15,19 @@ class ContactData extends Component {
             postalCode: '',
         },
         loading: false,
+        ingredients: null,
+    }
+
+    componentWillMount() {
+        this.setState({ingredients : this.props.ingredients});
     }
 
     orderHandler = (event) => {
         event.preventDefault();
 
         this.setState({loading : true});
+
+        console.log("Marp",this.state.ingredients);
 
         const order = {
             ingredients : this.state.ingredients,
