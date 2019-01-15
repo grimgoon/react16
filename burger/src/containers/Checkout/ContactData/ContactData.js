@@ -51,7 +51,7 @@ class ContactData extends Component {
                 value : ''
             },  
             deliveryMethod : {
-                elementType: 'input',
+                elementType: 'select',
                 elementConfig: {
                     type: 'select',
                     options: [
