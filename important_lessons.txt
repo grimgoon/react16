@@ -76,6 +76,12 @@ Good Thirdparty Packages:
 - Axios - Make http / Ajax requests easier.
 - PropTypes - To validate prop variable types. Good for bigger projects with several teammembers.
 - react-router-dom (& react-router used as a dependency) - More or less the de facto packages for handling routing in React. - Documentation: https://reacttraining.com/react-router/web/guides/philosophy
+- Validate.js (you may import its functionality into your React projects): https://validatejs.org/
+- Alternatives to the manual approach taken in this course:
+react-validation package: https://www.npmjs.com/package/react-validation
+formsy-react package: https://github.com/christianalfoni/formsy-react
+
 
 Other Good Resoures:
 https://jsonplaceholder.typicode.com/ - Used for dummy JSON http requests.
+
