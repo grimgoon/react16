@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+
 import Button from '../../../components/UI/Button/Button';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import styles from './ContactData.module.css';
@@ -111,7 +113,7 @@ class ContactData extends Component {
 
         const order = {
             ingredients : this.state.ingredients,
-            price : this.props.price,
+            price : this.props.totalPrice,
             orderData : formData
            
         }
@@ -208,5 +210,12 @@ class ContactData extends Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        ingredients : state.ingredients,
+        totalPrice : state.totalPrice,
+    }
+}
 
-export default ContactData;
+
+export default connect(mapStateToProps)(ContactData);
