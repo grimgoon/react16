@@ -7,37 +7,41 @@ export const DELETE_RESULT = 'DELETE_RESULT';
 
 export const increment = () => {
     return {
-        type : INCREMENT
+        type: INCREMENT
     }
 }
 
 export const decrement = () => {
     return {
-        type : INCREMENT
+        type: INCREMENT
     }
 }
 
-export const add = () => {
+export const add = (value) => {
     return {
-        type : ADD
+        type: ADD,
+        val: value
     }
 }
 
 
-export const subtract = () => {
+export const subtract = (value) => {
     return {
-        type : SUBTRACT
+        type: SUBTRACT,
+        val: value,
     }
 }
 
-export const store_result = () => {
+export const store_result = (result) => {
     return {
-        type : STORE_RESULT
+        type: STORE_RESULT,
+        result
     }
 }
 
-export const delete_result = () => {
+export const delete_result = (resultId) => {
     return {
-        type : DELETE_RESULT
+        type: DELETE_RESULT,
+        resultElId : resultId
     }
 }
