@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 
 const Todo = props => {
-    const inputState = useState('');
+    const [todoName, setTodoName] = useState('');
 
     const inputChangeHandler = (event) => {
-        inputState[1](event.target.value);
+        setTodoName(event.target.value);
     }
 
     return  <>
-        <input type="text" placeholder="Todo" onChange={inputChangeHandler} value={inputState[0]}/>
+        <input type="text" placeholder="Todo" onChange={inputChangeHandler} value={todoName}/>
         <button type="button">Add</button>
         <ul>
 
