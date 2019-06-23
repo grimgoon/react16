@@ -5,8 +5,6 @@ const Todo = props => {
     const [todoName, setTodoName] = useState('');
     const [todoList, setTodoList] = useState([]);
 
-
-    
     useEffect(() => {
         axios.get('https://test-help-ooqq.firebaseio.com/todos.json')
             .then((res) => {
@@ -17,7 +15,7 @@ const Todo = props => {
                 }
                 setTodoList(todos);
             });
-    });
+    }, []);
 
     const inputChangeHandler = (event) => {
         setTodoName(event.target.value);
