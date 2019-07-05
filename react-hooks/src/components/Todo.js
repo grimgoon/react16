@@ -1,11 +1,12 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useEffect, useReducer, useRef } from "react";
 import axios from "axios";
 
 const Todo = props => {
-  const [todoName, setTodoName] = useState("");
+  // const [todoName, setTodoName] = useState("");
   const [submittedTodo, setSubmittedTodo] = useState(null);
   // const [todoList, setTodoList] = useState([]);
   
+  const todoInputRef = useRef();
 
   useEffect(() => {
     axios.get("https://test-help-ooqq.firebaseio.com/todos.json").then(res => {
@@ -54,9 +55,11 @@ const Todo = props => {
     }
   }, [submittedTodo]);
 
-  const inputChangeHandler = event => {
-    setTodoName(event.target.value);
-  };
+  // const inputChangeHandler = event => {
+  //   setTodoName(event.target.value);
+  // };
+
+  const todoName = todoInputRef.current.value;
 
   const todoAddHandler = () => {
     axios
@@ -82,8 +85,9 @@ const Todo = props => {
       <input
         type="text"
         placeholder="Todo"
-        onChange={inputChangeHandler}
-        value={todoName}
+        // onChange={inputChangeHandler}
+        // value={todoName}
+        ref={todoInputRef}
       />
       <button onClick={todoAddHandler} type="button">
         Add
