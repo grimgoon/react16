@@ -73,6 +73,10 @@ const Todo = props => {
       });
   };
 
+  const todoRemoveHandler = todoId => {
+    dispatch({type: "REMOVE", payload: todoId})
+  }
+
   return (
     <>
       <input
@@ -86,7 +90,7 @@ const Todo = props => {
       </button>
       <ul>
         {todoList.map((todo, i) => (
-          <li key={i}>{todo.name}</li>
+          <li onClick={() => todoRemoveHandler(todo.id)} key={i}>{todo.name}</li>
         ))}
       </ul>
     </>
