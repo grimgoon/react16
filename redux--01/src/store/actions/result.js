@@ -15,6 +15,8 @@ export const store_result = result => (dispatch, getState) => {
     }, 2000);
 }
 
+
+
 export const delete_result = (resultId) => {
     return {
         type: actionTypes.DELETE_RESULT,
