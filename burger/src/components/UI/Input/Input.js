@@ -1,45 +1,59 @@
 import React from 'react';
-import styles from './Input.module.css';
 
-const input = (props) => {
+import classes from './Input.css';
 
+const input = ( props ) => {
     let inputElement = null;
+    const inputClasses = [classes.InputElement];
 
-    const inputClasses = [styles.inputElement];
-
-    if(props.invalid && props.shouldValidate && props.touched) {
-        inputClasses.push(styles.Invalid);
+    if (props.invalid && props.shouldValidate && props.touched) {
+        inputClasses.push(classes.Invalid);
     }
 
-    switch (props.inputtype) {
-        case ('input'):
-            inputElement = <input onChange={props.changed} className={inputClasses.join(' ')} {...props.elementConfig}  value={props.value} />;
+    switch ( props.elementType ) {
+        case ( 'input' ):
+            inputElement = <input
+                className={inputClasses.join(' ')}
+                {...props.elementConfig}
+                value={props.value}
+                onChange={props.changed} />;
             break;
-        case ('textarea') :
-            inputElement = <textarea onChange={props.changed} className={inputClasses.join(' ')}  {...props.elementConfig} value={props.value}/>;
+        case ( 'textarea' ):
+            inputElement = <textarea
+                className={inputClasses.join(' ')}
+                {...props.elementConfig}
+                value={props.value}
+                onChange={props.changed} />;
             break;
-        case ('select') : 
+        case ( 'select' ):
             inputElement = (
-                <select onChange={props.changed} 
+                <select
                     className={inputClasses.join(' ')}
-                    value={props.value}>
+                    value={props.value}
+                    onChange={props.changed}>
                     {props.elementConfig.options.map(option => (
-                        <option value={option.value}>{option.displayValue}</option>
+                        <option key={option.value} value={option.value}>
+                            {option.displayValue}
+                        </option>
                     ))}
                 </select>
             );
             break;
-        default: 
-            inputElement = <input onChange={props.changed} className={inputClasses.join(' ')}  {...props.elementConfig} value={props.value}/>;
-            break;
+        default:
+            inputElement = <input
+                className={inputClasses.join(' ')}
+                {...props.elementConfig}
+                value={props.value}
+                onChange={props.changed} />;
     }
 
     return (
-        <div className={styles.Input}>
-            <label className={styles.Label}>{props.label}</label>
+        <div className={classes.Input}>
+            <label className={classes.Label}>{props.label}</label>
             {inputElement}
         </div>
-    )
+    );
+
 };
 
 export default input;
