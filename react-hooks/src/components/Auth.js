@@ -1,7 +1,8 @@
 import React from 'react';
 
 const Auth = props => (
-    <h1>Auth Component</h1>
+    <button>Log in!</button>
+    
 );
 
 export default Auth;
