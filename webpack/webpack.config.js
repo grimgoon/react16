@@ -47,6 +47,10 @@ module.exports = {
           }
         ],
         exclude: /node_modules/
+      },
+      {
+        test: /\.(png|jp?g|gif)$/,
+        loader: "url-loader?limit=80000&name=images/[name].[ext]"
       }
     ]
   }
