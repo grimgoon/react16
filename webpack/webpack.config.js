@@ -7,5 +7,17 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.[hash:6].js",
     publicPath: "/"
+  },
+  resolve: {
+    extensions: [".js", ".jsx"]
+  },
+  module: {
+    rules: [
+      {
+        test: /\(.js|jsx)$/,
+        loader: "",
+        exclude: /node_modules/
+      }
+    ]
   }
 };
