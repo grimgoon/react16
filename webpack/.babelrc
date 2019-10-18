@@ -1,14 +1,10 @@
 {
     "presets": [
-        ["env", {
-            "targets": {
-                // https://github.com/browserslist/browserslist
-                "browsers": [
-                    "> 1%",
-                    "last 2 versions"
-                ]
-            }
-        }],
-        "react"
+        ["@babel/env", { "loose": true, "useBuiltIns": "usage", "corejs": "3" }],
+        ["@babel/react"]
+    ],
+    "plugins": [
+        "@babel/plugin-syntax-dynamic-import",
+        "@babel/plugin-proposal-class-properties"
     ]
 }
