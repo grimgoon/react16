@@ -1,5 +1,6 @@
 const path = require("path");
 const autoprefixer = require("autoprefixer");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -49,5 +50,11 @@ module.exports = {
         loader: "url-loader?limit=80000&name=images/[name].[ext]"
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "src/index.html"),
+      inject: "body"
+    })
+  ]
 };
